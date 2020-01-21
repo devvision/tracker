@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="@dimen/_80sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        app:cardCornerRadius="@dimen/_25sdp"
+        app:contentPaddingTop="0dp"
+        app:cardElevation="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilExercise"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_50sdp"
+            app:boxBackgroundColor="@android:color/white"
+            app:boxStrokeWidth="0dp"
+            app:hintEnabled="false"
+            app:startIconTint="@null"
+            app:startIconDrawable="@drawable/ic_running"
+            app:boxCornerRadiusBottomEnd="@dimen/_25sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_25sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_25sdp"
+            app:boxCornerRadiusTopStart="@dimen/_25sdp">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/etExercise"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:drawablePadding="0dp"
+                android:hint="Select Exercise"
+                android:focusable="false"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:focusableInTouchMode="false"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/fadeView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:fadingEdge="horizontal"
+        android:requiresFadingEdge="vertical"
+        android:fadingEdgeLength="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/white_fade"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fabMyLocation"
+        android:layout_marginBottom="@dimen/_50sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/fadeView"
+        app:layout_constraintStart_toEndOf="@id/btnTrack"
+        app:tint="@null"
+        app:backgroundTint="@android:color/white"
+        app:srcCompat="@drawable/ic_position"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTrack"
+        android:layout_marginBottom="@dimen/_50sdp"
+        app:layout_constraintEnd_toStartOf="@id/fabMyLocation"
+        app:layout_constraintBottom_toBottomOf="@id/fadeView"
+        app:layout_constraintStart_toEndOf="@id/btnHistory"
+        app:tint="@null"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_play"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStopTrack"
+        android:layout_marginBottom="@dimen/_50sdp"
+        app:layout_constraintEnd_toStartOf="@id/fabMyLocation"
+        app:layout_constraintBottom_toBottomOf="@id/fadeView"
+        app:layout_constraintStart_toEndOf="@id/btnHistory"
+        app:tint="@null"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_stop"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnHistory"
+        android:layout_marginBottom="@dimen/_50sdp"
+        app:layout_constraintEnd_toStartOf="@id/btnTrack"
+        app:layout_constraintBottom_toBottomOf="@id/fadeView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@null"
+        app:backgroundTint="@android:color/white"
+        app:srcCompat="@drawable/ic_counterclockwise"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDistance"
+        app:layout_constraintTop_toTopOf="@id/fadeView"
+        tools:text="20km"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textSize="@dimen/_28ssp"
+        android:textStyle="bold"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
